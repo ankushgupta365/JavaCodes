@@ -21,7 +21,18 @@ public class SLLL {
         }
         System.out.print("null");
     }
-
+    public int length(){
+        if(head == null){
+            return 0;
+        }
+        int count = 0;
+        ListNode current = head;
+        while(current!=null){
+            count++;
+            current = current.next;
+        }
+        return count;
+    }
     public static void main(String[] args) {
         SLLL sll = new SLLL();
         sll.head = new ListNode(10);
@@ -33,5 +44,6 @@ public class SLLL {
         second.next = third;
         third.next = fourth;
         sll.display();
+        System.out.println("length of linkedList is: "+ sll.length());
     }
 }
