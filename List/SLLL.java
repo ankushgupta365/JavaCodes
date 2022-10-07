@@ -1,12 +1,14 @@
 package List;
 
 public class SLLL {
+    //head will be null initially
     private ListNode head;
 
     private static class ListNode {
         private int data; // Can be a generic type
         private ListNode next; // Reference to next ListNode in list
 
+        //this constructor will create a node whose next will point to null
         public ListNode(int data) {
             this.data = data;
             this.next = null;
@@ -19,6 +21,7 @@ public class SLLL {
             System.out.print(current.data + "....>");
             current = current.next;
         }
+        //below s specifies that it is a string to be printed
         System.out.print("null");
     }
     public int length(){
