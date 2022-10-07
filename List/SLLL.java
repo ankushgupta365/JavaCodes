@@ -41,6 +41,21 @@ public class SLLL {
         newNode.next = head;
         head = newNode;
     }
+    public void insertEnd(int data){
+        //by default newNode will be created with next pointing to null
+        ListNode newNode = new ListNode(data);
+        //if there is no linked list we point head to newNode
+        if(head == null){
+            head = newNode;
+        }
+        ListNode current = head;
+        //traverse till curretn.next is null
+        while(null != current.next){
+            current = current.next;
+        }
+        //after traversing till null, point current next to newNode
+        current.next = newNode;
+    }
     public static void main(String[] args) {
         SLLL sll = new SLLL();
         // sll.head = new ListNode(10);
@@ -55,6 +70,7 @@ public class SLLL {
         sll.insertFirst(10);
         sll.insertFirst(20);
         sll.insertFirst(30);
+        sll.insertEnd(2);
         sll.display();
         System.out.println("\nlength of linkedList is: "+ sll.length());
     }
