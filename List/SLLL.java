@@ -51,6 +51,7 @@ public class SLLL {
         }
         ListNode current = head;
         //traverse till curretn.next is null
+        //we are travelling till current.next is null not till current is null
         while(null != current.next){
             current = current.next;
         }
