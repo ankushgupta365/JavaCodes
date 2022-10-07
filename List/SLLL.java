@@ -47,6 +47,7 @@ public class SLLL {
         //if there is no linked list we point head to newNode
         if(head == null){
             head = newNode;
+            return;
         }
         ListNode current = head;
         //traverse till curretn.next is null
