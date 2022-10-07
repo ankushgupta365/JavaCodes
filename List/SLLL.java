@@ -1,5 +1,5 @@
 package List;
-
+//special attention: (1.) insert method which inset node at any given postion in the node
 public class SLLL {
     //head will be null initially
     private ListNode head;
@@ -58,6 +58,24 @@ public class SLLL {
         //after traversing till null, point current next to newNode
         current.next = newNode;
     }
+    public void insert(int position,int data){ //method to insert node at any position starting from 1, where head node is 1
+        ListNode newNode = new ListNode(data);
+        if(position == 1){
+            newNode.next = head;
+            head = newNode;
+            return;
+        }
+        int count=1;
+        ListNode previous = head;
+        //traverse till when you point previous to postion-1
+        while(count<position-1){
+            previous = previous.next;
+            count++;
+        }
+        ListNode current = previous.next; //where you want to add the newNode, pointing current to exact position node
+        newNode.next = current;
+        previous.next = newNode;
+    }
     public static void main(String[] args) {
         SLLL sll = new SLLL();
         // sll.head = new ListNode(10);
@@ -73,6 +91,7 @@ public class SLLL {
         sll.insertFirst(20);
         sll.insertFirst(30);
         sll.insertEnd(2);
+        sll.insert(1,5);
         sll.display();
         System.out.println("\nlength of linkedList is: "+ sll.length());
     }
