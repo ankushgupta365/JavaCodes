@@ -33,17 +33,26 @@ public class SLLL {
         }
         return count;
     }
+    public void insertFirst(int data){
+        ListNode newNode = new ListNode(data);
+        newNode.next = head;
+        head = newNode;
+    }
     public static void main(String[] args) {
         SLLL sll = new SLLL();
-        sll.head = new ListNode(10);
-        ListNode second = new ListNode(1);
-        ListNode third = new ListNode(8);
-        ListNode fourth = new ListNode(12);
+        // sll.head = new ListNode(10);
+        // ListNode second = new ListNode(1);
+        // ListNode third = new ListNode(8);
+        // ListNode fourth = new ListNode(12);
 
-        sll.head.next = second;
-        second.next = third;
-        third.next = fourth;
+        // sll.head.next = second;
+        // second.next = third;
+        // third.next = fourth;
+
+        sll.insertFirst(10);
+        sll.insertFirst(20);
+        sll.insertFirst(30);
         sll.display();
-        System.out.println("length of linkedList is: "+ sll.length());
+        System.out.println("\nlength of linkedList is: "+ sll.length());
     }
 }
