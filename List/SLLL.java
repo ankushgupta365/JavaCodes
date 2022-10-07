@@ -76,6 +76,15 @@ public class SLLL {
         newNode.next = current;
         previous.next = newNode;
     }
+    public ListNode deleteFirst(){
+        if(head == null){
+            return null;
+        }
+        ListNode temp = head;
+        head = temp.next;
+        temp.next=null;
+        return temp;
+    }
     public static void main(String[] args) {
         SLLL sll = new SLLL();
         // sll.head = new ListNode(10);
@@ -94,5 +103,8 @@ public class SLLL {
         sll.insert(1,5);
         sll.display();
         System.out.println("\nlength of linkedList is: "+ sll.length());
+        sll.deleteFirst();
+        System.out.println("....After deleting first node...");
+        sll.display();
     }
 }
