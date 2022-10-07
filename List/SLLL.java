@@ -85,6 +85,23 @@ public class SLLL {
         temp.next=null;
         return temp;
     }
+    public ListNode deleteLast(){
+        if(head == null){
+            return head;
+        }else if(head.next == null){
+            ListNode current = head;
+            head = head.next;
+            return current;
+        }
+        ListNode prev= null;
+        ListNode current = head;
+        while(current.next != null){
+            prev = current;
+            current = current.next;
+        }
+        prev.next =null;
+        return current;
+    }
     public static void main(String[] args) {
         SLLL sll = new SLLL();
         // sll.head = new ListNode(10);
@@ -105,6 +122,12 @@ public class SLLL {
         System.out.println("\nlength of linkedList is: "+ sll.length());
         sll.deleteFirst();
         System.out.println("....After deleting first node...");
+        sll.display();
+        sll.deleteFirst();
+        sll.deleteFirst();
+        sll.deleteFirst();
+        sll.display();
+        sll.deleteLast();
         sll.display();
     }
 }
