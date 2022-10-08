@@ -15,7 +15,7 @@ public class SLLL {
         }
     }
 
-    public void display() {
+    public void display(ListNode head) {
         ListNode current = head;
         while (current != null) {
             System.out.print(current.data + "....>");
@@ -119,6 +119,16 @@ public class SLLL {
             return;
         }
     }
+    public boolean search(int value){
+        ListNode current = head;
+        while(current != null){
+            if(current.data == value){
+                return true;
+            }
+            current = current.next;
+        }
+        return false;
+    }
     public static void main(String[] args) {
         SLLL sll = new SLLL();
         // sll.head = new ListNode(10);
@@ -135,14 +145,15 @@ public class SLLL {
         sll.insertFirst(30);
         sll.insertEnd(2);
         sll.insert(1,5);
-        sll.display();
+        sll.display(sll.head);
         System.out.println("length of linkedList is: "+ sll.length());
         sll.deleteFirst();
         System.out.println("....After deleting first node...");
-        sll.display();
+        sll.display(sll.head);
         sll.delete(3);
         System.out.println("After deleting node at 3 location");
-        sll.display();
+        sll.display(sll.head);
+        System.out.println("Searching value: 8 in linked list "+ sll.search(30));
 
     }
 }
