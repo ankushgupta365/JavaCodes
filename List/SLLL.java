@@ -1,5 +1,6 @@
 package List;
 //special attention: (1.) insert method which inset node at any given postion in the node
+//                   (2.) reverse method which reverse the list 
 public class SLLL {
     //head will be null initially
     private ListNode head;
@@ -129,6 +130,21 @@ public class SLLL {
         }
         return false;
     }
+    public ListNode reverse(){
+        if(head == null){
+            return head;
+        }
+        ListNode current = head;
+        ListNode prev = null;
+        ListNode next = null;
+        while(current != null){
+            next = current.next;
+            current.next = prev;
+            prev = current;
+            current = next;
+        }
+        return prev;
+    }
     public static void main(String[] args) {
         SLLL sll = new SLLL();
         // sll.head = new ListNode(10);
@@ -153,7 +169,8 @@ public class SLLL {
         sll.delete(3);
         System.out.println("After deleting node at 3 location");
         sll.display(sll.head);
-        System.out.println("Searching value: 8 in linked list "+ sll.search(30));
-
+        System.out.println("Searching value: 30 in linked list "+ sll.search(30));
+        ListNode reversedList = sll.reverse();
+        sll.display(reversedList);
     }
 }
