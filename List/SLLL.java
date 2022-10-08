@@ -158,10 +158,19 @@ public class SLLL {
         return slwPtr;
     }
     public ListNode getNodeFromEnd(int position, ListNode head){
+        if(head == null){
+            return head;
+        }
+        if(position<=0){
+            throw new IllegalArgumentException("given provided position is less then zero ");
+        }
         ListNode mainPtr = head;
         ListNode refPtr = head;
         int count =0;
         while(count<position){
+            if(mainPtr == null){
+                throw new IllegalArgumentException("given position is greater then the linked list length");
+            }
             mainPtr = mainPtr.next;
             count++;
         }
