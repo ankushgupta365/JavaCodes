@@ -22,7 +22,7 @@ public class SLLL {
             current = current.next;
         }
         //below s specifies that it is a string to be printed
-        System.out.print("null");
+        System.out.print("null\n");
     }
     public int length(){
         if(head == null){
@@ -102,6 +102,23 @@ public class SLLL {
         prev.next =null;
         return current;
     }
+    public void delete(int position){
+        //we assume that position is valid postion which means it lies in the range of linkedlist
+        if(position == 1){
+            head = head.next;
+            return;
+        }else{
+            ListNode prev = head;
+            int count = 1;
+            while(count < position-1){
+                prev = prev.next;
+                count++;
+            }
+            ListNode current = prev.next;
+            prev.next = current.next;
+            return;
+        }
+    }
     public static void main(String[] args) {
         SLLL sll = new SLLL();
         // sll.head = new ListNode(10);
@@ -119,15 +136,13 @@ public class SLLL {
         sll.insertEnd(2);
         sll.insert(1,5);
         sll.display();
-        System.out.println("\nlength of linkedList is: "+ sll.length());
+        System.out.println("length of linkedList is: "+ sll.length());
         sll.deleteFirst();
         System.out.println("....After deleting first node...");
         sll.display();
-        sll.deleteFirst();
-        sll.deleteFirst();
-        sll.deleteFirst();
+        sll.delete(3);
+        System.out.println("After deleting node at 3 location");
         sll.display();
-        sll.deleteLast();
-        sll.display();
+
     }
 }
