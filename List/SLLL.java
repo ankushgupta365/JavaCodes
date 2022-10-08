@@ -157,6 +157,21 @@ public class SLLL {
         }
         return slwPtr;
     }
+    public ListNode getNodeFromEnd(int position, ListNode head){
+        ListNode mainPtr = head;
+        ListNode refPtr = head;
+        int count =0;
+        while(count<position){
+            mainPtr = mainPtr.next;
+            count++;
+        }
+        //we move mainPtr extra position ahed from head so refPtr is behind mainPtr till we want it to be
+        while(mainPtr!=null){
+            refPtr = refPtr.next;
+            mainPtr = mainPtr.next;
+        }
+        return refPtr;
+    }
     public static void main(String[] args) {
         SLLL sll = new SLLL();
         // sll.head = new ListNode(10);
@@ -187,5 +202,6 @@ public class SLLL {
         sll.insertEnd(5);
         sll.display(reversedList);
         System.out.println("Middle node data is " + sll.getMidlleNode(reversedList).data);
+        System.out.println("Node from n=2 from end is " + sll.getNodeFromEnd(2,reversedList).data);
     }
 }
