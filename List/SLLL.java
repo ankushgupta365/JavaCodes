@@ -145,6 +145,18 @@ public class SLLL {
         }
         return prev;
     }
+    public ListNode getMidlleNode(ListNode head){
+        if(head==null){
+            return head;
+        }
+        ListNode slwPtr = head;
+        ListNode fastPtr = head;
+        while(fastPtr != null && fastPtr.next !=null){
+            slwPtr = slwPtr.next;
+            fastPtr = fastPtr.next.next;
+        }
+        return slwPtr;
+    }
     public static void main(String[] args) {
         SLLL sll = new SLLL();
         // sll.head = new ListNode(10);
@@ -172,5 +184,8 @@ public class SLLL {
         System.out.println("Searching value: 30 in linked list "+ sll.search(30));
         ListNode reversedList = sll.reverse();
         sll.display(reversedList);
+        sll.insertEnd(5);
+        sll.display(reversedList);
+        System.out.println("Middle node data is " + sll.getMidlleNode(reversedList).data);
     }
 }
