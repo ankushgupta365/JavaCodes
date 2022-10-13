@@ -181,6 +181,19 @@ public class SLLL {
         }
         return refPtr;
     }
+    public void removeDuplicate(ListNode head){
+        while(head == null){
+            return;
+        }
+        ListNode current = head;
+        while(current !=null && current.next != null){
+            if(current.data == current.next.data){
+                current.next = current.next.next;
+            }else{
+                current = current.next;
+            }
+        }
+    }
     public static void main(String[] args) {
         SLLL sll = new SLLL();
         // sll.head = new ListNode(10);
@@ -212,5 +225,10 @@ public class SLLL {
         sll.display(reversedList);
         System.out.println("Middle node data is " + sll.getMidlleNode(reversedList).data);
         System.out.println("Node from n=2 from end is " + sll.getNodeFromEnd(2,reversedList).data);
+        sll.insertEnd(5);
+        sll.display(reversedList);
+        sll.removeDuplicate(reversedList);
+        sll.display(reversedList);
+
     }
 }
