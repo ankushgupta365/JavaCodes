@@ -206,6 +206,18 @@ public class SLLL {
         temp.next = newNode;
         return head;
     }
+    public void removeGivenKey(int data){
+        if(head == null){
+            return;
+        }
+        ListNode current = head;
+        ListNode temp = null;
+        while(current!=null && current.data != data){
+            temp = current;
+            current = current.next;
+        }
+        temp.next = current.next;
+    }
     public static void main(String[] args) {
         SLLL sll = new SLLL();
         // sll.head = new ListNode(20);
@@ -247,6 +259,8 @@ public class SLLL {
         sll.insertFirst(30);
         sll.display(sll.head);
         sll.insertInSortedList(sll.head, 45);
+        sll.display(sll.head);
+        sll.removeGivenKey(45);
         sll.display(sll.head);
     }
 }
