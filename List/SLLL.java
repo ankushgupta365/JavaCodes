@@ -216,6 +216,7 @@ public class SLLL {
             temp = current;
             current = current.next;
         }
+        if(current == null)return;
         temp.next = current.next;
     }
     public static void main(String[] args) {
