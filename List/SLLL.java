@@ -181,7 +181,7 @@ public class SLLL {
         }
         return refPtr;
     }
-    public void removeDuplicate(ListNode head){
+    public void removeDuplicateFromSorted(ListNode head){
         while(head == null){
             return;
         }
@@ -227,7 +227,7 @@ public class SLLL {
         System.out.println("Node from n=2 from end is " + sll.getNodeFromEnd(2,reversedList).data);
         sll.insertEnd(5);
         sll.display(reversedList);
-        sll.removeDuplicate(reversedList);
+        sll.removeDuplicateFromSorted(reversedList);
         sll.display(reversedList);
 
     }
