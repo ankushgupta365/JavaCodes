@@ -194,9 +194,21 @@ public class SLLL {
             }
         }
     }
+    public ListNode insertInSortedList(ListNode head,int data){
+        ListNode newNode = new ListNode(data);
+        ListNode current = head;
+        ListNode temp = null;
+        while(current != null && current.data<newNode.data){
+            temp = current;
+            current= current.next;
+        }
+        newNode.next = current;
+        temp.next = newNode;
+        return head;
+    }
     public static void main(String[] args) {
         SLLL sll = new SLLL();
-        // sll.head = new ListNode(10);
+        // sll.head = new ListNode(20);
         // ListNode second = new ListNode(1);
         // ListNode third = new ListNode(8);
         // ListNode fourth = new ListNode(12);
@@ -205,30 +217,36 @@ public class SLLL {
         // second.next = third;
         // third.next = fourth;
 
-        sll.insertFirst(10);
-        sll.insertFirst(20);
+        // sll.insertFirst(10);
+        // sll.insertFirst(20);
+        // sll.insertFirst(30);
+        // sll.insertEnd(2);
+        // sll.insert(1,5);
+        // sll.display(sll.head);
+        // System.out.println("length of linkedList is: "+ sll.length());
+        // sll.deleteFirst();
+        // System.out.println("....After deleting first node...");
+        // sll.display(sll.head);
+        // sll.delete(3);
+        // System.out.println("After deleting node at 3 location");
+        // sll.display(sll.head);
+        // System.out.println("Searching value: 30 in linked list "+ sll.search(30));
+        // ListNode reversedList = sll.reverse();
+        // sll.display(reversedList);
+        // sll.insertEnd(5);
+        // sll.display(reversedList);
+        // System.out.println("Middle node data is " + sll.getMidlleNode(reversedList).data);
+        // System.out.println("Node from n=2 from end is " + sll.getNodeFromEnd(2,reversedList).data);
+        // sll.insertEnd(5);
+        // sll.display(reversedList);
+        // sll.removeDuplicateFromSorted(reversedList);
+        // sll.display(reversedList);
+        sll.insertFirst(60);
+        sll.insertFirst(50);
+        sll.insertFirst(40);
         sll.insertFirst(30);
-        sll.insertEnd(2);
-        sll.insert(1,5);
         sll.display(sll.head);
-        System.out.println("length of linkedList is: "+ sll.length());
-        sll.deleteFirst();
-        System.out.println("....After deleting first node...");
+        sll.insertInSortedList(sll.head, 45);
         sll.display(sll.head);
-        sll.delete(3);
-        System.out.println("After deleting node at 3 location");
-        sll.display(sll.head);
-        System.out.println("Searching value: 30 in linked list "+ sll.search(30));
-        ListNode reversedList = sll.reverse();
-        sll.display(reversedList);
-        sll.insertEnd(5);
-        sll.display(reversedList);
-        System.out.println("Middle node data is " + sll.getMidlleNode(reversedList).data);
-        System.out.println("Node from n=2 from end is " + sll.getNodeFromEnd(2,reversedList).data);
-        sll.insertEnd(5);
-        sll.display(reversedList);
-        sll.removeDuplicateFromSorted(reversedList);
-        sll.display(reversedList);
-
     }
 }
