@@ -1,6 +1,7 @@
 package List;
 //special attention: (1.) insert method which inset node at any given postion in the node
 //                   (2.) reverse method which reverse the list 
+//                   (3.) startingofLoop method
 public class SLLL {
     //head will be null initially
     private ListNode head;
@@ -250,6 +251,28 @@ public class SLLL {
         fifth.next = sixth;
         sixth.next = third; // this will create a loop where 6th point to third
     }
+    public ListNode startingOfLoop(){
+        //floyd's cycle
+        if(head == null){
+            return head;
+        }
+        ListNode fastPtr = head;
+        ListNode slowPtr = head;
+        //if there is a loop then definitely there will come a situation when slowptr and fastptr going to meet
+        while(fastPtr!=null && fastPtr.next !=null){
+            fastPtr = fastPtr.next.next;
+            slowPtr= slowPtr.next;
+            if(slowPtr==fastPtr){
+                ListNode temp = head;
+                while(temp != slowPtr){
+                    temp = temp.next;
+                    slowPtr = slowPtr.next;
+                }
+                return temp;
+            }
+        }
+        return null;
+    }
     public static void main(String[] args) {
         SLLL sll = new SLLL();
         // sll.head = new ListNode(20);
@@ -298,5 +321,6 @@ public class SLLL {
         
         sll.createLoopInLinkedList();
         System.out.println("do linked list have loop: " + sll.detectLoopInLinkedlist());
+        System.out.println("starting of loop in linked list is from data: " + sll.startingOfLoop().data);
     }
 }
