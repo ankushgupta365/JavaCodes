@@ -273,6 +273,28 @@ public class SLLL {
         }
         return null;
     }
+    public void removeLoopLinkedList(){
+        ListNode fastPtr = head;
+        ListNode slowPtr = head;
+        while(fastPtr != null && fastPtr.next != null){
+            fastPtr = fastPtr.next.next;
+            slowPtr = slowPtr.next;
+            if(slowPtr == fastPtr){
+                //if there is a loop then fast and slow pointer matches and if matches then we call this fxn
+                removeLoop(slowPtr);
+            }
+        }
+    }
+    private void removeLoop(ListNode slowPtr) {
+        ListNode temp = head;
+        // according to floyd cycle head to starting of loop distance = slowptr to starting of loop distance
+        //so we will stop at the one node before the starting of the loop node and going to point it's next to null
+        while(slowPtr.next != temp.next){
+            temp = temp.next;
+            slowPtr = slowPtr.next;
+        }
+        slowPtr.next = null;
+    }
     public static void main(String[] args) {
         SLLL sll = new SLLL();
         // sll.head = new ListNode(20);
@@ -322,5 +344,9 @@ public class SLLL {
         sll.createLoopInLinkedList();
         System.out.println("do linked list have loop: " + sll.detectLoopInLinkedlist());
         System.out.println("starting of loop in linked list is from data: " + sll.startingOfLoop().data);
+        System.out.println("remove loop from linked list");
+        sll.removeLoopLinkedList();
+        System.out.println("do linked list have loop: " + sll.detectLoopInLinkedlist());
+
     }
 }
