@@ -1,1 +1,1 @@
-​
+​// we create a linkedlist with value zero in it and finally return it's next as a head to avoid null pointer exception
