@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/0002-add-two-numbers" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/0031-next-permutation" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/0048-rotate-image" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/0053-maximum-subarray" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/0056-merge-intervals" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/0075-sort-colors" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/0118-pascals-triangle" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/0121-best-time-to-buy-and-sell-stock" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Basic Java codes" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Reverse-Array" isTestSource="false" packagePrefix="Reverse" />
+      <sourceFolder url="file://$MODULE_DIR$/small_projects.java" isTestSource="false" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>
